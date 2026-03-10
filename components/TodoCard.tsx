@@ -1,25 +1,26 @@
-import { useState } from "react";
+import { useRouter } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 interface TodoCardProps {
+  id?: number;
   title: string;
   completed?: boolean;
 }
 
-export default function TodoCard({ title, completed }: TodoCardProps) {
-  const [isCompleted, setIsCompleted] = useState(completed);
+export default function TodoCard({ id, title, completed }: TodoCardProps) {
+  const router = useRouter();
   return (
-    <Pressable onPress={() => setIsCompleted(!isCompleted)}>
-      <View style={[styles.card, isCompleted ? styles.cardDone : undefined]}>
+    <Pressable onPress={() => router.navigate(`/list/detail/${id}`)}>
+      <View style={[styles.card, completed ? styles.cardDone : undefined]}>
         <Text
           style={[
             styles.paragraph,
-            isCompleted ? styles.paragraphDone : undefined,
+            completed ? styles.paragraphDone : undefined,
           ]}
         >
           {title}
         </Text>
-        <Text>{isCompleted ? "Fait" : "A faire"}</Text>
+        <Text>{completed ? "Fait" : "A faire"}</Text>
       </View>
     </Pressable>
   );

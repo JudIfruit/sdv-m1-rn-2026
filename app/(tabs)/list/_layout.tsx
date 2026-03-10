@@ -7,6 +7,7 @@ export default function ListLayout() {
         headerTitleStyle: {
           fontWeight: "bold",
         },
+        headerBackTitle: "Retour",
       }}
     />
   );

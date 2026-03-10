@@ -7,7 +7,6 @@ export default function TodoEditScreen() {
       <Stack.Screen
         options={{
           title: "Créer une TODO",
-          headerBackTitle: "Retour",
         }}
       />
       <TodoEdit />
