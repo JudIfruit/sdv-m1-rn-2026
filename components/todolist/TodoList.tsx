@@ -19,7 +19,7 @@ export default function TodoList() {
         todos.map((todo) => (
           <TodoCard
             id={todo.id}
-            title={todo.title}
+            title={todo.todo}
             completed={todo.completed}
             key={todo.id}
           />

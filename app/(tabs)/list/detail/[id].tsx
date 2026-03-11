@@ -16,7 +16,7 @@ export default function TodoDetailScreen() {
         }}
       />
       <Text>ID : {id}</Text>
-      <Text>Titre : {todo?.title}</Text>
+      <Text>Titre : {todo?.todo}</Text>
       <Text>{todo?.completed ? "Fait" : "A faire"}</Text>
     </>
   );
